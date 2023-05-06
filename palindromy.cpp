@@ -26,7 +26,7 @@ int main() {
     string input;
     //program pobiera od uzytkownika liczbe/slowo, ktora uzytkownik chce zbadac, a nastepnie zwraca odpowiednia odpowiedz w zaleznosci od tego, czy podana liczba/slowo jest palindromem
     cout << "type a number/word: \n";
-    cin >> input;
+    getline(cin, input);
     cout << input << palindrom(input) << endl;
     return 0;
 }
