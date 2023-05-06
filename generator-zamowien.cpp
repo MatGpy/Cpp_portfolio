@@ -379,51 +379,51 @@ string peripherals(int r, int b){
 string special_wishes(int j, int k, int b) {
     if(j == 1 || k == 1) {
         return("none");
-    } if(j == 2 || k == 2) {
+    } else if(j == 2 || k == 2) {
         return("minimum 2tb of system memory");
-    } if(j == 3 || k == 3) {
+    } else if(j == 3 || k == 3) {
         return("minimum 3tb of system memory");
-    } if(j == 4 || k == 4) {
+    } else if(j == 4 || k == 4) {
         return("minimum 16gb of ram");
-    } if(j == 5 || k == 5) {
+    } else if(j == 5 || k == 5) {
         return("none");
-    } if((j == 6 && b == 2) || (k == 6 && b == 2)) {
+    } else if((j == 6 && b == 2) || (k == 6 && b == 2)) {
         return("ultrawide monitor");
-    } if((j == 7 && b == 2) || (k == 6 && b == 2)) {
+    } else if((j == 7 && b == 2) || (k == 6 && b == 2)) {
         return("monitor with 144 hz of refresh rate");
-    } if(j == 8 || k == 8) {
+    } else if(j == 8 || k == 8) {
         return("none");
-    } if((j == 9 && b == 2) || (k == 9 && b == 2)) {
+    } else if((j == 9 && b == 2) || (k == 9 && b == 2)) {
         return("monitor with 4k resolution");
-    } if(j == 10 || k == 10) {
+    } else if(j == 10 || k == 10) {
         return("more than 1tb of system memory");
-    } if(j == 11 || k == 11) {
+    } else if(j == 11 || k == 11) {
         return("none");
-    } if(j == 12 || k == 12) {
+    } else if(j == 12 || k == 12) {
         return("none");
-    } if(j == 13 || k == 13) {
+    } else if(j == 13 || k == 13) {
         return("minimum 32gb of RAM");
-    } if((j == 14 && b == 2) || (j == 14 || b == 2)) {
+    } else if((j == 14 && b == 2) || (j == 14 || b == 2)) {
         return("monitor with wqhd resolution");
-    } if(j == 15 || k == 15) {
+    } else if(j == 15 || k == 15) {
         return("support for Ray Tracing");
-    } if((j == 16 && b == 2) || (k == 16 && b == 2)) {
+    } else if((j == 16 && b == 2) || (k == 16 && b == 2)) {
         return("two monitors");
-    } if((j == 17 && b == 2) || (k == 16 && b == 2)) {
+    } else if((j == 17 && b == 2) || (k == 16 && b == 2)) {
         return("three monitors");
-    } if(j == 18 || k == 18) {
+    } else if(j == 18 || k == 18) {
         return("only SSD storage");
-    } if(j == 19 || k == 19) {
+    } else if(j == 19 || k == 19) {
         return("none");
-    } if(j == 20 || k == 20) {
+    } else if(j == 20 || k == 20) {
         return("none");
-    } if(j == 21 || k == 21) {
+    } else if(j == 21 || k == 21) {
         return("none");
-    } if(j == 22 || k == 22) {
+    } else if(j == 22 || k == 22) {
         return("none");
-    } if((j == 23 && b == 2) || (k == 23 && b == 2)) {
+    } else if((j == 23 && b == 2) || (k == 23 && b == 2)) {
         return("monitor with 240 hz of refresh rate");
-    } if(j == 24 || k == 24) {
+    } else if(j == 24 || k == 24) {
         return("none");
     } else {
         return("none");
