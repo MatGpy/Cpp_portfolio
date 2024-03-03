@@ -24,7 +24,7 @@ Description of all program's variables:
 | hintNumber | Integer, it's used to choose a type of hint program will give to the user |
 | hintNumber2 | Integer, it's used to generate a hint for the user, which informs user if guessed number is higher or lower than hintNumber2 |
 | attemptNumber | Integer, it's used to inform about the number of certain attempt and iterate through all user's available attempts |
-| difficultyLevelAttempts | Dictionary, stores information about amount of attempts available in every difficulty level |
+| difficultyLevelAttempts | Map, stores information about amount of attempts available in every difficulty level |
 
 Description of all program's functions:
 
