@@ -2,90 +2,113 @@
 #include <cstdlib>
 #include <time.h>
 #include <cmath>
+#include <map>
+#include <string>
 using namespace std;
-string compareGuess(int guess, int guessedNumber) {
+void compareGuess(int guess, int guessedNumber) {
     if (guess == guessedNumber) {
-        return "Correct answer";
+        cout << "Correct answer\n";
     } else {
         if (guess < guessedNumber) {
-            return "Your guess is too low";
+            cout << "Your guess is too low\n";
         } if (guess > guessedNumber) {
-            return "Your guess is too high";
+            cout << "Your guess is too high\n";
         }
     }
 }
-
-/*
-string guess(int x, int y) {
-    if(x == y) {
-        return "correct answer";
-    } else {
-        if(x < y) {
-            return("your guess is too low");
-        } if(x > y) {
-            return("your guess is too high");
-        }
-    }
-}
-int main() {
-    srand(time(0));
-    int num = (rand()%10)+1;
-    int num2 = (rand()%3)+1;
-    int num3 = (rand()%10)+1;
-    string level1;
-    string hint;
-    int level2;
-    int x;
+string takeDifficultyLevel(string difficultyLevel) {
     cout << "level of difficulty:\nvery easy - 8 attempts\neasy - 6 attempts\nnormal - 4 attempts\nhard - 2 attempts\nchoose level of difficulty: ";
-    cin >> level1;
-    if(level1 == "very easy") {
-        level2 = 8;
-    } else if(level1 == "easy") {
-        level2 = 6;
-    } else if(level1 == "normal") {
-        level2 = 4;
-    } else if(level1 == "hard") {
-        level2 = 2;
-    } else {
-        cout << "player chose unavailable level of difficulty";
+    cin >> difficultyLevel;
+    if (difficultyLevel != "very easy" && difficultyLevel != "easy" && difficultyLevel != "normal" && difficultyLevel != "hard") {
+        throw (difficultyLevel);
     }
-    cout << "Do you want a hint (type 'yes' if you want, or 'no' if you don't want):\n";
+    return difficultyLevel;
+}
+int defineAmountOfAttempts (int amountOfAttempts, string difficultyLevel, const map <string, int>& difficultyLevelAttempts) {
+    amountOfAttempts = difficultyLevelAttempts.at(difficultyLevel);
+    return amountOfAttempts;
+}
+string askAboutHint(string hint) {
+    cout << "Do you want to get a hint (type 'yes' if you want a hint and 'no' if you don't)? " << endl;
     cin >> hint;
-    if(hint == "yes") {
-        switch(num2) {
+    if (hint != "yes" && hint != "no") {
+        throw (hint);
+    }
+    return hint;
+}
+void displayHint(string hint, int guessedNumber, int hintNumber, int hintNumber2) {
+    if (hint == "yes") {
+        switch (hintNumber) {
             case 1:
-            if(num % 2 == 0) {
+            if (guessedNumber % 2 == 0) {
                 cout << "this number is even\n";
             } else {
                 cout << "this number is odd\n";
             } break;
             case 2:
-            if(num < num3) {
-                cout << "this number is lower than " << num3 << endl;
+            if (guessedNumber < hintNumber2) {
+                cout << "this number is lower than " << hintNumber2 << endl;
             } else {
-                cout << "this number is higher or equal to " << num3 << endl;
+                cout << "this number is higher or equal to " << hintNumber2 << endl;
             } break;
             case 3:
-            if(pow(num, 2) < 10) {
+            if (pow(guessedNumber, 2) < 10) {
                 cout << "this number squared is lower than 10\n";
             } else {
                 cout << "this number squared is higher or equal to 10\n";
             } break;
             default:
-            cout << "something went wrong";
+            cout << "something went wrong\n";
             break;
         }
     }
-    for(int i = 1; i <= level2; i++) {
-        cout << "attempt number " << i << ": \n";
-        cin >> x;
-        cout << guess(x, num) << endl;
-        if(i == level2) {
-            cout << "you ran out of attempts. Correct answer is " << num << endl;
-        } if(x == num) {
-            break;
+}
+int takeGuess(int guess, int attemptNumber) {
+    cout << "Attempt no." << attemptNumber << "\nInsert your guess: \n";
+    cin >> guess;
+    if (guess < 1 || guess > 10) {
+        throw (guess);
+    }
+    return guess;
+}
+int main() {
+    srand(time(0));
+    try {
+        cout << "Try to guess a randomly generated number between 1 and 10\n";
+        int guessedNumber = (rand()%10)+1;
+        int hintNumber = (rand()%3)+1;
+        int hintNumber2 = (rand()%10)+1;
+        int amountOfAttempts;
+        int attemptNumber;
+        int guess;
+        string difficultyLevel;
+        string hint;
+        map<string, int> difficultyLevelAttempts;
+        difficultyLevelAttempts["very easy"] = 8;
+        difficultyLevelAttempts["easy"] = 6;
+        difficultyLevelAttempts["normal"] = 4;
+        difficultyLevelAttempts["hard"] = 2;
+        difficultyLevel = takeDifficultyLevel(difficultyLevel);
+        amountOfAttempts = defineAmountOfAttempts(amountOfAttempts, difficultyLevel, difficultyLevelAttempts);
+        hint = askAboutHint(hint);
+        displayHint(hint, guessedNumber, hintNumber, hintNumber2);
+        attemptNumber = 1;
+        while(attemptNumber <= amountOfAttempts) {
+            guess = takeGuess(guess, attemptNumber);
+            compareGuess(guess, guessedNumber);
+            if(guess == guessedNumber) {
+                break;
+            }
+            if(attemptNumber == amountOfAttempts) {
+                cout << "You ran out of attempts. Correct answer is " << guessedNumber << endl;
+            }
+            attemptNumber++;
         }
+    }
+    catch(int errorNumber) {
+        cout << "Error";
+    } catch (string error) {
+        cout << "Error";
     }
     return 0;
 }
-*/
