@@ -10,7 +10,7 @@ Firstly, program randomly chooses the value of three integers - guessedNumber (n
 
 If user uses Linux device:
 
-In order to use this program, user has to open terminal, change directory to the location where this program is saved on user's device and compile this program on their device by typing 'g++ number_guessing_game.cpp -o number_guessing_game.exe'. Then, user has to execute this file by typing './number_guessing_game.exe' - after all these steps, user can insert level of difficulty of their choice and insert guesses until they won't guess the number. Disclaimer - before using this program in the way described above, user has to make sure g++ compiler is installed on their device.
+In order to use this program, user has to open terminal, change directory to the location where this program is saved on user's device and compile this program on their device by typing 'g++ number_guessing_game.cpp -o number_guessing_game.exe'. Then, user has to execute this file by typing './number_guessing_game.exe' - after all these steps, user can insert level of difficulty of their choice and insert guesses until they won't guess the number. Disclaimer - before folowing these steps, make sure g++, or other c++ compiler, is installed on your device. 
 
 If user uses Windows device:
 

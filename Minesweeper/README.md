@@ -10,7 +10,7 @@ Firstly, this program creates two tables - mainTable and displayedTable (mainTab
 
 If user uses Linux device:
 
-In order to use this program, user has to open terminal, change directory to the location where this program is saved on user's device, compile it by typing 'g++ Minesweeper.cpp -o Minesweeper.exe' and run it by typing './Minesweeper.exe'. Then, user has to specify the level of difficulty they want to play with and then the game begins - program will repeatedly show user current state of the table and ask user about table cell they want to uncover until user's victory or defeat.
+In order to use this program, user has to open terminal, change directory to the location where this program is saved on user's device, compile it by typing 'g++ Minesweeper.cpp -o Minesweeper.exe' and run it by typing './Minesweeper.exe'. Then, user has to specify the level of difficulty they want to play with and then the game begins - program will repeatedly show user current state of the table and ask user about table cell they want to uncover until user's victory or defeat. Disclaimer - before folowing these steps, make sure g++, or other c++ compiler, is installed on your device.
 
 If user uses Windows device:
 
