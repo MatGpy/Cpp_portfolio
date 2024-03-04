@@ -30,7 +30,7 @@ User can run this file using Windows Powershell - then, process of running the p
 | attemptNumber | Integer, it's used to inform about the number of certain attempt and iterate through all user's available attempts. |
 | difficultyLevelAttempts | Map, stores information about amount of attempts available in every difficulty level. |
 
-**Description of all program's functions:
+**Description of all program's functions:**
 
 | function name | function description |
 | ------------- | -------------------- |
