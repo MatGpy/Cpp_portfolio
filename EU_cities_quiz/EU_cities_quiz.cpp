@@ -78,13 +78,13 @@ int main() {
         string cityNames[3];
         string cityNamesShuffled[3];
         map<string,string> citiesLocations = {
-            {"Berlin", "Germany"}, {"Munich", "Germany"}, {"Hanover", "Germany"}, {"Paris", "France"}, {"Lyon", "France"}, {"Toulouse", "France"}, {"Madrid", "Spain"}, {"Barcelona", "Spain"}, {"Seville", "Spain"}, {"Milan", "Italy"}, {"Rome", "Italy"}, {"Naples", "Italy"},
+            {"Berlin", "Germany"}, {"Munich", "Germany"}, {"Hanover", "Germany"}, {"Paris", "France"}, {"Lyon", "France"}, {"Toulouse", "France"}, {"Madrid", "Spain"}, {"Barcelona", "Spain"}, {"Seville", "Spain"}, {"Milan", "Italy"}, {"Rome", "Italy"}, {"Naples", "Italy"}
         };
         map<int,string> citiesNums = {
-            {1, "Berlin"}, {2, "Munich"}, {3, "Hanover"}, {4, "Paris"}, {5, "Lyon"}, {6, "Toulouse"}, {7, "Madrid"}, {8, "Barcelona"}, {9, "Seville"}, {10, "Milan"}, {11, "Rome"}, {12, "Naples"},
+            {1, "Berlin"}, {2, "Munich"}, {3, "Hanover"}, {4, "Paris"}, {5, "Lyon"}, {6, "Toulouse"}, {7, "Madrid"}, {8, "Barcelona"}, {9, "Seville"}, {10, "Milan"}, {11, "Rome"}, {12, "Naples"}
         };
         map<int,string> countryNums = {
-            {1, "Germany"}, {2, "France"}, {3, "Spain"}, {4, "Italy"},
+            {1, "Germany"}, {2, "France"}, {3, "Spain"}, {4, "Italy"}
         };
         amountOfQuestions = takeAmountOfQuestions(amountOfQuestions);
         while (questionNumber <= amountOfQuestions){
