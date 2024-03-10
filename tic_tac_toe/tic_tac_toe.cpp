@@ -12,7 +12,7 @@ void printTable(char table[3][3]) {
     cout << table[1][0] << "|" << table[1][1] << "|" << table[1][2] << endl;
     cout << table[2][0] << "|" << table[2][1] << "|" << table[2][2] << endl;
 }
-void takeUserSign(char userSign, char programSign, map<char,char> programSignValues) {
+void takeUserSign(char& userSign, char& programSign, map<char,char> programSignValues) {
     cout << "choose sign you want to use (x or o): \n";
     cin >> userSign;
     programSign = programSignValues[userSign];
@@ -60,8 +60,8 @@ int main() {
         int programVictory = 0;
         int programMoveRow;
         int programMoveColumn;
-        char userSign;
-        char programSign;
+        char userSign = ' ';
+        char programSign = ' ';
         string userMove;
         map<char,char> programSignValues = {
             {'x', 'o'}, {'o', 'x'}
