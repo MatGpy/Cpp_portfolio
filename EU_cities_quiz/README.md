@@ -1,4 +1,4 @@
-**EU_cities_quiz.py - documentation.**
+**EU_cities_quiz.cpp - documentation.**
 
 This program is a quiz game about cities situated in EU.
 
