@@ -48,6 +48,7 @@ void checkVictory(char table[3][3], char userSign, char programSign, int& userVi
     }
 }
 int main() {
+    srand(time(0));
     try {
         char table[3][3] = {
             {' ', ' ', ' '},
