@@ -16,12 +16,11 @@ void takeUserSign(char& userSign, char& programSign, map<char,char> programSignV
     cout << "choose sign you want to use (x or o): \n";
     cin >> userSign;
     programSign = programSignValues[userSign];
-    cout << "signs" << userSign << programSign << endl;
 }
 string takeUserMove(char table[3][3], string userMove) {
     cout << "your turn - insert coordinates of the field where you want to put your number (in a following order - rc, where r means number of row and c means number of column): \n";
     cin >> userMove;
-    while (table[(userMove[0]-'0')-1][(userMove[1]-'0')-1] != '0') {
+    while (table[(userMove[0]-'0')-1][(userMove[1]-'0')-1] != ' ') {
         cout << "player chose field that's already occupated\n";
         cout << "insert coordinates of the field where you want to put your number (in a following order - rc, where r means number of row and c means number of column): \n";
         cin >> userMove;
@@ -34,26 +33,26 @@ string takeUserMove(char table[3][3], string userMove) {
 void takeProgramMove(char table[3][3], int programMoveRow, int programMoveColumn, char programSign) {
     programMoveRow = (rand()%3)+1;
     programMoveColumn = (rand()%3)+1;
-    while(table[programMoveRow-1][programMoveColumn] != '0') {
+    while(table[programMoveRow-1][programMoveColumn-1] != ' ') {
         programMoveRow = (rand()%3)+1;
         programMoveColumn = (rand()%3)+1;
     }
     table[programMoveRow-1][programMoveColumn-1] = programSign;
 }
-void checkVictory(char table[3][3], char userSign, char programSign, int userVictory, int programVictory) {
-    if(table[0][0] == table[0][1] == table[0][2] == userSign || table[1][0] == table[1][1] == table[1][2] == userSign || table[2][0] == table[2][1] == table[2][2] == userSign || table[0][0] == table[1][1] == table[2][2] == userSign || table[0][2] == table[1][1] == table[2][0] == userSign || table[0][0] == table[1][0] == table[2][0] == userSign || table[0][1] == table[1][1] == table[2][1] == userSign || table[0][2] == table[1][2] == table[2][2] == userSign) {
+void checkVictory(char table[3][3], char userSign, char programSign, int& userVictory, int& programVictory) {
+    if(table[0][0] == userSign && table[0][1] == userSign && table[0][2] == userSign || table[1][0] == userSign && table[1][1] == userSign && table[1][2] == userSign || table[2][0] == userSign && table[2][1] == userSign && table[2][2] == userSign || table[0][0] == userSign && table[1][1] == userSign && table[2][2] == userSign || table[0][2] == userSign && table[1][1] == userSign && table[2][0] == userSign || table[0][0] == userSign && table[1][0] == userSign && table[2][0] == userSign || table[0][1] == userSign && table[1][1] == userSign && table[2][1] == userSign || table[0][2] == userSign && table[1][2] == userSign && table[2][2] == userSign) {
         userVictory = 1;
     }
-    if(table[0][0] == table[0][1] == table[0][2] == programSign || table[1][0] == table[1][1] == table[1][2] == programSign || table[2][0] == table[2][1] == table[2][2] == programSign || table[0][0] == table[1][1] == table[2][2] == programSign || table[0][2] == table[1][1] == table[2][0] == programSign || table[0][0] == table[1][0] == table[2][0] == programSign || table[0][1] == table[1][1] == table[2][1] == programSign || table[0][2] == table[1][2] == table[2][2] == programSign) {
+    if(table[0][0] == programSign && table[0][1] == programSign && table[0][2] == programSign || table[1][0] == programSign && table[1][1] == programSign && table[1][2] == programSign || table[2][0] == programSign && table[2][1] == programSign && table[2][2] == programSign || table[0][0] == programSign && table[1][1] == programSign && table[2][2] == programSign || table[0][2] == programSign && table[1][1] == programSign && table[2][0] == programSign || table[0][0] == programSign && table[1][0] == programSign && table[2][0] == programSign || table[0][1] == programSign && table[1][1] == programSign && table[2][1] == programSign || table[0][2] == programSign && table[1][2] == programSign && table[2][2] == programSign) {
         programVictory = 1;
     }
 }
 int main() {
     try {
         char table[3][3] = {
-            {'0', '0', '0'},
-            {'0', '0', '0'},
-            {'0', '0', '0'}
+            {' ', ' ', ' '},
+            {' ', ' ', ' '},
+            {' ', ' ', ' '}
         };
         int occupatedFields = 0;
         int userVictory = 0;
