@@ -10,7 +10,7 @@ Firstly, this program displays initial state of the table (where all cells' valu
 
 If user uses Linux device:
 
-In order to use this program, user has to open terminal, change directory to the location where this program is saved on user's device, compile this program by typing 'g++ X_O_game.cpp -o X_O_game.exe' and run it by typing './X_O_game.exe'. Then, user has to repeatedly insert coordinates of the cell which value they want to replace (together with 4 cells congruent to that cell) every turn, until they'll manage to replace all table cells' values with 'X' signs.
+In order to use this program, user has to open terminal, change directory to the location where this program is saved on user's device, compile this program by typing 'g++ X_O_game.cpp -o X_O_game.exe' and run it by typing './X_O_game.exe'. Then, user has to repeatedly insert coordinates of the cell which value they want to replace (together with 4 cells congruent to that cell) every turn, until they'll manage to replace all table cells' values with 'X' signs. Disclaimer - before folowing these steps, make sure g++, or other c++ compiler, is installed on your device.
 
 If user uses Windows device:
 
